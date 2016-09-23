@@ -10,9 +10,9 @@ For more information on buildbot and check out it's [website][1].
 Running this will build you a docker image with the latest stable version of both
 docker-buildbot and County itself.
 
-    git clone https://github.com/dz0ny/docker-buildbot.git
+    git clone https://github.com/allanice001/docker-buildbot.git
     cd docker-buildbot
-    sudo docker build -t dz0ny/buildbot .
+    sudo docker build -t allanice001/buildbot .
 
 
 ## Running docker-buildbot
@@ -24,12 +24,12 @@ is the only thing running on your system you can map the port to 8010 and no
 proxy is needed. i.e. `-p=80:8010` Also be sure your mounted directory on your
 host machine is already created before running this `mkdir -p /mnt/buildbot`.
 
-    sudo docker run  -d -p=10000:8010 -v=/mnt/buildbot:/data dz0ny/buildbot
+    sudo docker run  -d -p=10000:8010 -v=/mnt/buildbot:/data allanice001/buildbot
 
 From now on when you start/stop docker-buildbot you should use the container id
 with the following commands. To get your container id, after you initial run
 type `sudo docker ps` and it will show up on the left side followed by the image
-name which is `dz0ny/buildbot:latest`.
+name which is `allanice001/buildbot:latest`.
 
     sudo docker start <container_id>
     sudo docker stop <container_id>
@@ -37,7 +37,7 @@ name which is `dz0ny/buildbot:latest`.
 ### Notes on the run command
 
  + `-v` is the volume you are mounting `-v=host_dir:docker_dir`
- + `dz0ny/buildbot` is simply what I called my docker build of this image
+ + `allanice001/buildbot` is simply what I called my docker build of this image
  + `-d=true` allows this to run cleanly as a daemon, remove for debugging
  + `-p` is the port it connects to, `-p=host_port:docker_port`
 
